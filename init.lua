@@ -243,27 +243,27 @@ require('lazy').setup({
   --    require('gitsigns').setup({ ... })
   --
   -- See `:help gitsigns` to understand what the configuration keys do
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-    },
-  },
-  -- {
-  --   'sourcegraph/sg.nvim',
-  --   dependencies = { 'nvim-lua/plenary.nvim' },
-  --   config = function()
-  --     require('sg').setup {
-  --       enable_cody = true,
-  --     }
-  --   end,
+  -- { -- Adds git related signs to the gutter, as well as utilities for managing changes
+  --   'lewis6991/gitsigns.nvim',
+  --   opts = {
+  --     signs = {
+  --       add = { text = '+' },
+  --       change = { text = '~' },
+  --       delete = { text = '_' },
+  --       topdelete = { text = '‾' },
+  --       changedelete = { text = '~' },
+  --     },
+  --   },
   -- },
+  {
+    'sourcegraph/sg.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      require('sg').setup {
+        enable_cody = true,
+      }
+    end,
+  },
   {
     'Exafunction/codeium.nvim',
     dependencies = {
@@ -271,7 +271,7 @@ require('lazy').setup({
       'hrsh7th/nvim-cmp',
     },
     config = function()
-      require('codeium').setup {}
+      require('codeium').setup()
     end,
   },
   {
